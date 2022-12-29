@@ -1,8 +1,13 @@
 import xml.etree.ElementTree as ET
+from urllib.request import urlopen
 
 
+url = input('Enter URL: ')
+print('This is URL: ', url)
+var_url = urlopen(url)
+print('var_url:', var_url)
 # Pass the path of the xml document
-tree = ET.parse('comments_42.xml')
+tree = ET.parse(var_url)
 
 # get the parent tag
 root = tree.getroot()
